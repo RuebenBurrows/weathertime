@@ -1,0 +1,106 @@
+{
+    "author": "ruebenburrows@gmail.com",
+    "dependencies": {
+        "pebble-clay": "^1.0.2"
+    },
+    "keywords": [],
+    "name": "changing-weather",
+    "pebble": {
+        "capabilities": [
+            "location",
+            "configurable"
+        ],
+        "displayName": "Changing Weather",
+        "enableMultiJS": true,
+        "messageKeys": {
+            "KEY_CONDITIONS": 1,
+            "KEY_TEMPERATURE": 0,
+            "TempCond": 2
+        },
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/MenuImage.png",
+                    "menuIcon": true,
+                    "name": "SCREEN",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/Clouds.png",
+                    "memoryFormat": "Smallest",
+                    "name": "CLOUDS",
+                    "spaceOptimization": "memory",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/Snow.png",
+                    "memoryFormat": "Smallest",
+                    "name": "SNOW",
+                    "spaceOptimization": "memory",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/Mist.png",
+                    "memoryFormat": "Smallest",
+                    "name": "MIST",
+                    "spaceOptimization": "memory",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/Thunder.png",
+                    "memoryFormat": "Smallest",
+                    "name": "THUNDER",
+                    "spaceOptimization": "memory",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/Rain1.png",
+                    "memoryFormat": "Smallest",
+                    "name": "RAIN",
+                    "spaceOptimization": "memory",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/Clear.png",
+                    "memoryFormat": "Smallest",
+                    "name": "CLEAR",
+                    "spaceOptimization": "memory",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/bt-icon.png",
+                    "memoryFormat": "Smallest",
+                    "name": "IMAGE_BT_ICON",
+                    "spaceOptimization": "memory",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                },
+                {
+                    "file": "images/BlueD.png",
+                    "memoryFormat": "Smallest",
+                    "name": "AS",
+                    "spaceOptimization": "memory",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt"
+        ],
+        "uuid": "5b11b7ba-ff58-4cc6-b529-be6af0d19b79",
+        "watchapp": {
+            "watchface": true
+        }
+    },
+    "version": "1.3.0"
+}
