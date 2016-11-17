@@ -38,8 +38,8 @@ function locationSuccess(pos) {
       
       // Assemble dictionary using our keys
       var dictionary = {
-        "KEY_TEMPERATURE": temperature,
-        "KEY_CONDITIONS": conditions
+        "TEMPERATURE": temperature,
+        "CONDITIONS": conditions
       };
 
       // Send to Pebble

@@ -17,7 +17,7 @@ module.exports = [
       {
         "type": "toggle",
         "messageKey": "TempCond",
-        "label": "Enable Seconds",
+        "label": "Temp Cond",
         "defaultValue": false
       }
     ]
