@@ -1,6 +1,4 @@
 #include <pebble.h>
-#define KEY_TEMPERATURE 0
-#define KEY_CONDITIONS 1
 
 static int s_battery_level;
 static Window *s_main_window;
@@ -16,15 +14,15 @@ static GBitmap  *s_bt_icon_bitmap;
 static void prv_inbox_received_handler(DictionaryIterator *iter, void *context) {
 
   Tuple *temp_t = dict_find(iter, MESSAGE_KEY_TempCond);
-  bool second_ticks = temp_t->value->int32 == 1;
-  persist_write_bool(MESSAGE_KEY_TempCond, second_ticks);
-  
-  APP_LOG(APP_LOG_LEVEL_DEBUG, "Settings Recieved as VALUE:  %d", second_ticks);
-
+  if(temp_t) {
+    bool second_ticks = temp_t->value->int32 == 1;
+    persist_write_bool(MESSAGE_KEY_TempCond, second_ticks);
+    APP_LOG(APP_LOG_LEVEL_DEBUG, "Settings Recieved as VALUE:  %d", second_ticks);
+  }
 }
 
 
-void prv_init(void) {
+static void prv_init(void) {
   // ...
 
   // Open AppMessage connection
@@ -45,8 +43,8 @@ static void inbox_received_callback(DictionaryIterator *iterator, void *context)
   static char weather_layer_buffer[32];
 
   // Read tuples for data
-  Tuple *temp_tuple = dict_find(iterator, KEY_TEMPERATURE);
-  Tuple *conditions_tuple = dict_find(iterator, KEY_CONDITIONS);
+  Tuple *temp_tuple = dict_find(iterator, MESSAGE_KEY_TEMPERATURE);
+  Tuple *conditions_tuple = dict_find(iterator, MESSAGE_KEY_CONDITIONS);
   con = conditions_tuple->value->cstring;
   
   // if (strcmp(weather_units_conf, "F") == 0){
@@ -339,9 +337,10 @@ static void init() {
   
   app_message_open(app_message_inbox_size_maximum(), app_message_outbox_size_maximum());
   // Register for Bluetooth connection updates
-connection_service_subscribe((ConnectionHandlers) {
-  .pebble_app_connection_handler = bluetooth_callback
-});
+  connection_service_subscribe((ConnectionHandlers) {
+    .pebble_app_connection_handler = bluetooth_callback
+  });
+  prv_init();
 }
 
 

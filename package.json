@@ -12,17 +12,16 @@
         ],
         "displayName": "Changing Weather",
         "enableMultiJS": true,
-        "messageKeys": {
-            "KEY_CONDITIONS": 1,
-            "KEY_TEMPERATURE": 0,
-            "TempCond": 2
-        },
+        "messageKeys": [
+            "TEMPERATURE",
+            "CONDITIONS",
+            "TempCond"
+        ],
         "projectType": "native",
         "resources": {
             "media": [
                 {
                     "file": "images/MenuImage.png",
-                    "menuIcon": true,
                     "name": "SCREEN",
                     "targetPlatforms": null,
                     "type": "bitmap"
